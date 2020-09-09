@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import {connect} from 'react-redux'
 import HomePageHoc from '../../hoc'
 import WeatherNow from '../../weatherNow'
 import OtherDays from '../../otherDays'
@@ -21,7 +21,11 @@ class HomePage extends Component {
     }
 }
 
-export default HomePageHoc(HomePage)
+const mapStateToProps = ({city}) =>{
+    return{city}
+}
+
+export default connect(mapStateToProps)(HomePageHoc(HomePage))
 
 // переводим полученные милисекунды(заката и рассвета) с сервера ,
 //в минуты и часы

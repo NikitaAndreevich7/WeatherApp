@@ -32,23 +32,23 @@ export default class OtherDays extends Component {
     createDataDay = (arr, day) => {
         return arr[day].map(weatherData => {
 
-            const { dt_txt, weather, wind, main } = weatherData;
-            const { temp } = main;
-
+            const { dt_txt, weather, wind, main:{temp} } = weatherData;
+ 
+    
             // I make the temperature format in Celsius
             const temperature = Math.floor(parseInt(temp - 273.15))
-
             const time = dt_txt.slice(11, 16)
-            console.log('time', time)
+
+            const url = this.searchUrl(weather[0].main)
+
             return (
                 <div className='descriptoins-weather'>
                     <p className='time'>{time}</p>
-                    <img className='img' src={require('../../UI/weather-icon/climate.png')} alt='' />
+                    <img className='img' src={url} alt='' />
                     <p className='temp'>{temperature}°</p>
                 </div>
             )
         })
-
     }
 
     //We get the current day of the week and the next 4
@@ -75,10 +75,15 @@ export default class OtherDays extends Component {
 
         const fiveDays = weekData.slice(n, n + 5);
 
+        
+        
         return fiveDays.map((day,index) => {
+
+            const classButtonDay =  this.state.day != index ? 'days btn btn-info' : 'days btn btn-info active' 
+
             return (
-                <div className='days btn btn-info' onClick={() => this.onChangeDay(index)} >
-                    <p className='days-text'>{day}</p>
+                <div className={classButtonDay} onClick={() => this.onChangeDay(index)} >
+                    <p className='days-text'>{index == 0 ? 'Today': day}</p>
                 </div>
             )
         })
@@ -89,6 +94,17 @@ export default class OtherDays extends Component {
 
         this.createDataDay(this.state.allDays,day)
     }
+
+    searchUrl = (type) =>{
+
+        if(type === 'Clouds'){ return require('../../UI/weather-icon/cloud.png')}
+        else if(type === 'Clear'){ return require ('../../UI/weather-icon/sun.png')}
+        else if(type === 'Rain'){ return require ('../../UI/weather-icon/rainy.png')}
+        else if(type === 'Show'){  return require ('../../UI/weather-icon/snowy.png')}
+        else{return require('../../UI/weather-icon/climate.png')}
+    }
+    
+    
 
     render() {
 
@@ -112,6 +128,4 @@ export default class OtherDays extends Component {
         )
     }
 }
-
-
 

@@ -15,8 +15,9 @@ export default class DataWeather {
     }
 
 
-    getDetailsInfo = ({list,city}) =>{
-        return {list,city}
+    getDetailsInfo = ({cod,list,city}) =>{
+
+        return {cod,list,city}
     }
 
 }
