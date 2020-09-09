@@ -19,7 +19,7 @@ const HomePageHoc = (ViewsComponent) => {
             this.getDataCity();
         }
         componentDidUpdate(prevProps) {
-            if (prevProps != this.props) {
+            if (prevProps !== this.props) {
                 this.getDataCity();
             }
         }

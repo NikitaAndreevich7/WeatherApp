@@ -37,7 +37,9 @@ import {getNewCity} from '../../store/action'
     }
 }
 
-const mapStateToProps = () => {}
+const mapStateToProps = () => {
+    return{}
+}
 
 const mapDispatchToProps = (dispatch) =>{
     return{

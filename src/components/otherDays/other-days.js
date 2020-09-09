@@ -30,9 +30,9 @@ export default class OtherDays extends Component {
 
     //We get an array of days and the current day.Displaying the weather for the current day.
     createDataDay = (arr, day) => {
-        return arr[day].map(weatherData => {
+        return arr[day].map((weatherData,index) => {
 
-            const { dt_txt, weather, wind, main:{temp} } = weatherData;
+            const { dt_txt, weather, main:{temp} } = weatherData;
  
     
             // I make the temperature format in Celsius
@@ -42,7 +42,7 @@ export default class OtherDays extends Component {
             const url = this.searchUrl(weather[0].main)
 
             return (
-                <div className='descriptoins-weather'>
+                <div key={index.toString()}className='descriptoins-weather'>
                     <p className='time'>{time}</p>
                     <img className='img' src={url} alt='' />
                     <p className='temp'>{temperature}°</p>
@@ -79,11 +79,11 @@ export default class OtherDays extends Component {
         
         return fiveDays.map((day,index) => {
 
-            const classButtonDay =  this.state.day != index ? 'days btn btn-info' : 'days btn btn-info active' 
+            const classButtonDay =  this.state.day !== index ? 'days btn btn-info' : 'days btn btn-info active' 
 
             return (
-                <div className={classButtonDay} onClick={() => this.onChangeDay(index)} >
-                    <p className='days-text'>{index == 0 ? 'Today': day}</p>
+                <div key={index.toString()} className={classButtonDay} onClick={() => this.onChangeDay(index)} >
+                    <p className='days-text'>{index === 0 ? 'Today': day}</p>
                 </div>
             )
         })

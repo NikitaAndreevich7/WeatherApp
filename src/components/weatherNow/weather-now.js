@@ -9,7 +9,7 @@ export default class WeatherNow extends Component {
         //getting data for the current day
         const {
             main: { feels_like, humidity, pressure, temp },
-            wind: { deg, speed }
+            wind: { speed } 
         } = this.props.list[0]
 
         const { main } = this.props.list[0].weather[0]
