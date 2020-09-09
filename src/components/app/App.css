@@ -1,0 +1,5 @@
+.App{
+    min-width:100%;
+    height: 100%;
+    background-image: linear-gradient(to top right, rgb(102, 112, 222), rgb(96, 106, 223), rgb(91, 100, 224), rgb(85, 94, 226), rgb(79, 88, 227), rgb(74, 82, 228), rgb(68, 76, 229), rgb(63, 70, 230), rgb(57, 64, 231), rgb(51, 58, 233), rgb(46, 52, 234), rgb(40, 46, 235));
+}
