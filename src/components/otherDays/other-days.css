@@ -1,0 +1,68 @@
+.otherDays-box{
+    margin-top:7%
+}
+.days-box{
+    display:flex;
+    margin-bottom:15px;
+    border-bottom:1px solid silver;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+.days-box :first-child{
+    border-bottom-left-radius: 15px;
+}
+.days-box :last-child{
+    border-bottom-right-radius: 15px;
+}
+.days{
+    width:20%;
+    cursor:pointer;
+    border-left:.5px solid silver;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255,255,255,0);
+    background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.54) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,0)), color-stop(100%, rgba(255,255,255,0.54)));
+    background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.54) 100%);
+    background: -o-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.54) 100%);
+    background: -ms-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.54) 100%);
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.54) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=0 );
+}
+.days-text{
+    color:#fff;
+    font-size:20px
+}
+
+
+.days-description-box{
+    display:flex;
+    justify-content: space-between;
+}
+
+.descriptoins-weather{
+    width:12%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0, .7);
+    border-radius:5px;
+}
+.descriptoins-weather img{
+    width:70%
+}
+.time{
+    font-size:20px;
+    color:#fff
+}
+.temp{
+    font-size:30px
+}
+
+.btn{
+    outline:none;
+    border:none;
+    border-radius: 0;
+}
