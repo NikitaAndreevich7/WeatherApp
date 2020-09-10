@@ -3,7 +3,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Available Scripts
 
 
-## В папке Weather и Server введте следующую команду для подключения всех зависимостей.
+## В корневом каталоге и каталоге Server введте следующую команду для подключения всех зависимостей.
 ### `npm install`
 
 ## Для запуска клиенской чати, введите следующую команду:
