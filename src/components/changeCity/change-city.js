@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import {getNewCity} from '../../store/action'
 
+import './change-city.css'
+
  class ChangeCity extends Component {
 
     state = {
@@ -24,11 +26,11 @@ import {getNewCity} from '../../store/action'
                 <div className="input-group mb-3">
                     <input type="text"
                          className="form-control" 
-                         placeholder="Recipient's username"
+                         placeholder="Pleace enter city"
                          value={this.state.value}
                          onChange={(event) => this.onChangeInput(event)} />
                     <div className="input-group-append">
-                        <button type="button" className="btn btn-info" onClick={() => this.onSubmit()} >Button</button>
+                        <button type="button" className="b btn btn-info" onClick={() => this.onSubmit()} >Search</button>
                     </div>
                 </div>
             

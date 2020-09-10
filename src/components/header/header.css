@@ -11,10 +11,22 @@
 }
 
 .changeCity-box{
-    width:60%
+    width:40%
 }
 
 .header-text{
     font-size:40px;
     color:#fff
+}
+.exit-box{
+
+    width:20%;
+    display:flex;
+    justify-content:flex-end;
+}
+
+.icon-exit{
+    width:40px;
+    align-self:center;
+    cursor:pointer
 }

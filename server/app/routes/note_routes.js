@@ -10,7 +10,7 @@ module.exports = function (app, db) {
     MongoClient.connect(db.url, (err, database) => {
       const myAwesomeDB = database.db('weather')
 
-      myAwesomeDB.collection('users').findOne(weather, (err, result) => {
+      myAwesomeDB.collection('users').findOne({email: req.body.email}, (err, result) => {
         console.log('REGISTRATION RESULT - ',result)
         if (err) {
           res.send({ 'error': 'An error has occurred' });

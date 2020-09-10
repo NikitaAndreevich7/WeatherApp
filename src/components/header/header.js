@@ -1,10 +1,10 @@
 import React,{Component} from 'react';
-
 import ChangeCity from '../changeCity'
+import { Link, withRouter } from 'react-router-dom';
 
 import './header.css'
 
-export default class Header extends Component{
+class Header extends Component{
 
 
     render(){
@@ -19,7 +19,13 @@ export default class Header extends Component{
                 <div className='changeCity-box'>
                     <ChangeCity />
                 </div>
+                <div className='exit-box btn'  onClick={() => this.props.history.push("/")}>
+                    <img className='icon-exit' src={require('../../UI/img/exit.png')} alt='' />
+                </div>
             </div>
         )
     }
 }
+
+
+export default withRouter(Header)

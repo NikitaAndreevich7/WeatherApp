@@ -11,7 +11,7 @@ export default class WeatherNow extends Component {
             main: { feels_like, humidity, pressure, temp },
             wind: { speed } 
         } = this.props.list[0]
-
+        console.log(this.props.list)
         const { main } = this.props.list[0].weather[0]
     
         // I make the temperature format in Celsius
@@ -32,7 +32,7 @@ export default class WeatherNow extends Component {
                 <div className='weatherNow-description'>
                     <div className='description-box'>
                         <p className='value-description'>{felsTemperature}</p>
-                        <span className='title-description'>Fels</span>
+                        <span className='title-description'>Feels</span>
                     </div>
                     <div className='description-box'>
                         <p className='value-description'>{humidity}</p>

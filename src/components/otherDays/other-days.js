@@ -15,6 +15,12 @@ export default class OtherDays extends Component {
         this.createAllData(this.props.list)
     }
 
+    componentDidUpdate(prevProps){
+        if(prevProps != this.props){
+            this.createAllData(this.props.list)
+        }
+    }
+
 
     //Divide the array into 5 parts.Each part is a specific day of the week.
     createAllData = (arr) => {
