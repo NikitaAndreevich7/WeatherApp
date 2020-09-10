@@ -11,20 +11,20 @@ module.exports = function (app, db) {
       const myAwesomeDB = database.db('weather')
 
       myAwesomeDB.collection('users').findOne(weather, (err, result) => {
+        console.log('REGISTRATION RESULT - ',result)
         if (err) {
           res.send({ 'error': 'An error has occurred' });
         } else if(result === null) {
-          myAwesomeDB.collection('users').insert(weather, (err, result) => {
+          myAwesomeDB.collection('users').insertOne(weather, (err, result) => {
             if (err) {
               res.send({ 'error': 'An error has occurred' });
-            } else if(result === null) {
+            } else {
               res.send(result)
             }
           })
         }else{
           console.log('Пользователь с таким email уже существует.')
           res.send('Пользователь с таким email уже существует.')
-          
         }
       });
     })
